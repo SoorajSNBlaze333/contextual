@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html, body {
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .contextual-menu {
+      position: absolute;
+      display: none;
+      overflow: hidden;
+    }
+
+    .contextual-menu-show {
+      opacity: 1;
+      display: block;
+      min-height: 100px;
+      min-width: 60px;
+      max-width: 100px;
+      border: 1px solid black;
+    }
+
+    .contextual-menu-item {
+      padding: 5px;
+      height: 100%;
+      width: 100%;
+    }
+
+    .contextual-menu-item:hover {
+      background-color: #ccc;
+    }
+
+    .contextual-menu-animate {
+      animation: fadeIn 0.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .menu-trigger {
+      background-color: #ccc;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="menu-one">
+    <div contextual-item>A</div>
+    <div contextual-item>B</div>
+    <div contextual-submenu label="C">
+      <div contextual-item>D</div>
+      <div contextual-item>E</div>
+    </div>
+  </div>
+
+  <div contextual="menu-one" class="menu-trigger">Trigger</div>
+  <script src="../src/contextual.js"></script>
+</body>
+</html>
